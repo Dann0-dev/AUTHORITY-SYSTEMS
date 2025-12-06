@@ -1,213 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Authority Blueprint | Authority Systems</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Authority Blueprint | Automated Authority System</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Space Grotesk', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            bg: '#050505', // Deep Matte Black
-                            surface: '#0F0F0F', // Off Black
-                            accent: '#00E599', // Signal Green
-                            accentHover: '#00CC88',
-                            border: '#222222',
-                        }
-                    },
-                    backgroundImage: {
-                        'grid-pattern': "linear-gradient(to right, #1a1a1a 1px, transparent 1px), linear-gradient(to bottom, #1a1a1a 1px, transparent 1px)",
-                    },
-                    boxShadow: {
-                        'glow': '0 0 30px rgba(0, 229, 153, 0.15)',
-                    }
-                }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: '#fff7ed',
+                100: '#ffedd5',
+                200: '#fed7aa',
+                300: '#fdba74',
+                400: '#fb923c',
+                500: '#f97316',
+                600: '#ea580c',
+                700: '#c2410c',
+                800: '#9a3412',
+                900: '#7c2d12',
+                950: '#431407',
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-out',
+              'slide-up': 'slideUp 0.5s ease-out',
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(20px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              }
             }
+          }
         }
+      }
     </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-color: #050505;
-            color: #ffffff;
-        }
-        .bg-grid {
-            background-size: 50px 50px;
-        }
-        .text-accent {
-            color: #00E599;
-        }
-        .border-accent {
-            border-color: #00E599;
-        }
-        .bg-accent {
-            background-color: #00E599;
-        }
-        @keyframes float {
-            0% { transform: translateY(0px); opacity: 0.2; }
-            50% { transform: translateY(-20px); opacity: 0.5; }
-            100% { transform: translateY(0px); opacity: 0.2; }
-        }
-        .node-dot {
-            animation: float 6s ease-in-out infinite;
-        }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #020617; /* Slate 950 */
+        color: #f8fafc; /* Slate 50 */
+      }
+      /* Custom scrollbar for dark theme */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0f172a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #334155;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #475569;
+      }
     </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
 </head>
-<body class="min-h-screen flex flex-col items-center justify-center p-6 bg-brand-bg bg-grid grid-pattern relative overflow-x-hidden">
-
-    <!-- Top Left Identity -->
-    <div class="absolute top-8 left-8 z-20">
-        <div class="font-display font-bold text-xl tracking-widest text-white border-l-4 border-brand-accent pl-3">
-            AUTHORITY<span class="text-accent">SYSTEMS</span>
-        </div>
-    </div>
-
-    <!-- Decorative Background Elements -->
-    <div class="absolute top-20 right-20 w-2 h-2 bg-brand-accent rounded-full node-dot"></div>
-    <div class="absolute bottom-40 left-10 w-2 h-2 bg-brand-accent rounded-full node-dot" style="animation-delay: 2s;"></div>
-    <div class="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-brand-accent rounded-full blur-[150px] opacity-5 pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
-
-    <!-- Main Layout -->
-    <main class="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-16 items-center mt-16 lg:mt-0 relative z-10">
-        
-        <!-- Left Column: Copy -->
-        <div class="lg:col-span-7 space-y-8">
-            
-            <!-- Technical Badge -->
-            <div class="inline-flex items-center space-x-2 border border-brand-border bg-brand-surface/80 backdrop-blur-md px-3 py-1 text-xs font-mono text-gray-400 rounded-full">
-                <span class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
-                <span>FOR COACHES & CONSULTANTS</span>
-            </div>
-
-            <!-- Headline -->
-            <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold leading-none tracking-tight">
-                THE AUTOMATED<br>
-                <span class="text-accent">AUTHORITY SYSTEM</span>
-            </h1>
-
-            <!-- Subheadline -->
-            <p class="text-xl text-gray-400 max-w-2xl font-light leading-relaxed relative pl-6 before:absolute before:left-0 before:top-0 before:h-full before:w-[2px] before:bg-brand-accent before:shadow-glow">
-                Stop chasing after leads. Get the simple 4 phase blueprint that captures traffic, builds trust, and fills your calendar on autopilot.
-            </p>
-
-            <!-- The Grid System (Bullets) -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
-                <div class="bg-brand-surface border border-brand-border p-5 hover:border-brand-accent transition-colors group rounded-lg">
-                    <h3 class="font-mono text-accent text-sm mb-2">01. THE MAGNET</h3>
-                    <p class="text-sm text-gray-300">Exchange value for an email with a high conversion lead magnet.</p>
-                </div>
-                <div class="bg-brand-surface border border-brand-border p-5 hover:border-brand-accent transition-colors group rounded-lg">
-                    <h3 class="font-mono text-accent text-sm mb-2">02. TRUST ENGINE</h3>
-                    <p class="text-sm text-gray-300">A 7-Day email sequence that builds trust in your expertise.</p>
-                </div>
-                <div class="bg-brand-surface border border-brand-border p-5 hover:border-brand-accent transition-colors group rounded-lg">
-                    <h3 class="font-mono text-accent text-sm mb-2">03. SALES LETTER</h3>
-                    <p class="text-sm text-gray-300">The story based sales letter that logically proves your lead needs your help.</p>
-                </div>
-                <div class="bg-brand-surface border border-brand-border p-5 hover:border-brand-accent transition-colors group rounded-lg">
-                    <h3 class="font-mono text-accent text-sm mb-2">04. DIAGNOSTIC CALL</h3>
-                    <p class="text-sm text-gray-300">Diagnose, and prescribing your solutions to your qualified leads.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Right Column: Form & Visual -->
-        <div class="lg:col-span-5 relative">
-            
-            <!-- Green decorative glow behind -->
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-brand-accent blur-[80px] opacity-15 z-0"></div>
-
-            <div class="bg-brand-surface border border-brand-border p-8 relative z-10 shadow-2xl rounded-xl backdrop-blur-sm">
-                
-                <!-- Book Cover Visual (Embedded SVG) -->
-                <div class="flex justify-center mb-8 mt-0 lg:-mt-16 w-full">
-                    <div class="w-48 shadow-2xl transform hover:-translate-y-2 transition-transform duration-300 rounded-sm overflow-hidden">
-                        <!-- SVG Code Embedded Directly -->
-                        <svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
-                            <defs>
-                                <linearGradient id="coverGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#050505;stop-opacity:1" />
-                                </linearGradient>
-                                <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
-                                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00E599" stroke-width="0.5" opacity="0.15"/>
-                                </pattern>
-                            </defs>
-                            <rect width="400" height="600" fill="url(#coverGradient)"/>
-                            <rect width="400" height="600" fill="url(#gridPattern)" />
-                            <rect x="0" y="0" width="15" height="600" fill="#00E599" />
-                            <rect x="230" y="50" width="140" height="30" fill="none" stroke="#00E599" stroke-width="2"/>
-                            <text x="300" y="70" font-family="Arial, sans-serif" font-size="10" fill="#00E599" text-anchor="middle" font-weight="bold" letter-spacing="2">FREE GUIDE</text>
-                            <text x="210" y="200" font-family="Arial, sans-serif" font-size="20" fill="#888888" text-anchor="middle" font-weight="bold" letter-spacing="4">THE AUTHORITY</text>
-                            <text x="210" y="250" font-family="Arial, sans-serif" font-size="52" fill="#ffffff" text-anchor="middle" font-weight="900" letter-spacing="0">BLUEPRINT</text>
-                            
-                            <rect x="160" y="300" width="100" height="6" fill="#00E599"/>
-                            <g transform="translate(150, 380)">
-                                <rect x="20" y="20" width="60" height="60" fill="none" stroke="#00E599" stroke-width="2"/>
-                                <line x1="20" y1="40" x2="80" y2="40" stroke="#00E599" stroke-width="1"/>
-                                <line x1="50" y1="20" x2="50" y2="80" stroke="#00E599" stroke-width="1"/>
-                                <circle cx="50" cy="50" r="10" fill="#00E599"/>
-                                <circle cx="20" cy="20" r="4" fill="#00E599" opacity="0.6"/>
-                                <circle cx="80" cy="80" r="4" fill="#00E599" opacity="0.6"/>
-                                <circle cx="80" cy="20" r="4" fill="#00E599" opacity="0.6"/>
-                                <circle cx="20" cy="80" r="4" fill="#00E599" opacity="0.6"/>
-                            </g>
-                            <text x="210" y="520" font-family="Arial, sans-serif" font-size="12" fill="#cccccc" text-anchor="middle" font-weight="400" letter-spacing="1">CLIENT ACQUISITION</text>
-                            <text x="210" y="560" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle" font-weight="bold" letter-spacing="2">AUTHORITY <tspan fill="#00E599">SYSTEMS.</tspan></text>
-                        </svg>
-                    </div>
-                </div>
-
-                <div class="text-center mb-8">
-                    <h3 class="font-display text-2xl font-bold text-white uppercase">Get The Blueprint</h3>
-                    <p class="text-sm font-mono text-brand-accent mt-2">// DOWNLOAD THE PDF TODAY</p>
-                </div>
-
-                <!-- Form -->
-                <!-- PASTE YOUR KIT FORM ID BELOW -->
-                <!-- Note: 'onsubmit' added to prevent page reload in preview. Remove when deploying. -->
-                <form action="https://app.convertkit.com/forms/YOUR_FORM_ID/subscriptions" method="post" class="space-y-4" onsubmit="event.preventDefault(); alert('In production, this submits to ConvertKit.');">
-                    <div>
-                        <input type="email" name="email_address" class="w-full bg-brand-bg border border-brand-border text-white px-4 py-3 font-mono text-sm focus:outline-none focus:border-brand-accent transition-colors placeholder-gray-600 rounded-md" placeholder="ENTER EMAIL ADDRESS" required>
-                    </div>
-                    <button type="submit" class="w-full bg-brand-accent hover:bg-brand-accentHover text-brand-bg font-bold py-4 text-sm tracking-widest uppercase transition-all shadow-glow rounded-md">
-                        SEND ME THE BLUEPRINT
-                    </button>
-                </form>
-
-                <!-- Trust Indicators -->
-                <div class="mt-6 pt-6 border-t border-brand-border text-center">
-                    <div class="flex justify-center gap-1 text-brand-accent mb-2 text-xs">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-xs text-gray-500 font-mono">HIGH-TICKET PROTOCOL // GET INSTANT ACCESS</p>
-                </div>
-            </div>
-        </div>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="absolute bottom-6 w-full text-center">
-        <p class="text-xs text-gray-600 font-mono">EST. 2025 // DANIEL BAILEY - AUTHORITY SYSTEMS</p>
-    </footer>
-
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
 </body>
 </html>
-
-
