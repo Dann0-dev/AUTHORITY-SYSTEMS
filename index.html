@@ -59,7 +59,7 @@
             <div class="w-full lg:w-1/2 p-8 md:p-16 lg:p-24 flex flex-col justify-center space-y-8 mt-16 lg:mt-0 z-10">
                 
                 <div class="inline-block bg-brand-gray text-brand-green px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide w-max border border-brand-green/20">
-                    FOR HEALTH & FITNESS COACHES
+                    FOR CONSULTANTS & COACHES
                 </div>
 
                 <h1 class="font-bebas text-6xl md:text-7xl lg:text-8xl text-white leading-none">
@@ -68,7 +68,7 @@
                 </h1>
 
                 <p class="text-lg md:text-xl text-gray-400 leading-relaxed max-w-xl">
-                    Escape the manual grind. Discover the "Revenue Architect" system to replace manual DMs with predictable assets that fill your calendar while you sleep.
+                    Stop relying on luck. Discover the "Revenue Architecture" system to replace manual DMs with predictable assets that fill your calendar while you sleep.
                 </p>
 
                 <!-- Benefit Bullets -->
@@ -116,10 +116,13 @@
                     </div>
 
                     <!-- MAILERLITE FORM START -->
-                    <!-- Connected to your specific endpoint -->
-                    <form class="space-y-4" action="https://assets.mailerlite.com/jsonp/1972850/forms/173324971372709751/subscribe" method="POST" target="_blank">
+                    <!-- 
+                         UPDATED: Added class 'ml-block-form' and 'data-code=""' 
+                         This is required for MailerLite JS to hook into the form.
+                    -->
+                    <form class="space-y-4 ml-block-form" action="https://assets.mailerlite.com/jsonp/1972850/forms/173324971372709751/subscribe" data-code="" method="POST" target="_blank">
                         
-                        <!-- Essential Hidden Fields from your MailerLite code -->
+                        <!-- Essential Hidden Fields -->
                         <input type="hidden" name="ml-submit" value="1">
                         <input type="hidden" name="anticsrf" value="true">
                         
