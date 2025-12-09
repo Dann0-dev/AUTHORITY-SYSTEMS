@@ -6,7 +6,8 @@
     <title>The Revenue Architecture Handbook</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Added Bebas Neue to the import -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -19,6 +20,7 @@
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
+                        bebas: ['"Bebas Neue"', 'sans-serif'], // Added Bebas here
                     },
                 }
             }
@@ -43,7 +45,8 @@
 
     <!-- Navbar (Minimalist) -->
     <nav class="w-full py-6 px-6 md:px-12 flex justify-between items-center absolute top-0 z-10">
-        <div class="font-bold text-xl tracking-tighter text-white">
+        <!-- Switched to font-bebas and increased size to 3xl -->
+        <div class="font-bebas text-3xl tracking-wide text-white">
             REVENUE <span class="text-brand-green">ARCHITECT</span>
         </div>
     </nav>
@@ -61,9 +64,10 @@
                     FOR CONSULTANTS & COACHES
                 </div>
 
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                    You Don't Need More Hustle. <br>
-                    <span class="text-brand-green">You Need a Machine.</span>
+                <!-- Switched to font-bebas, increased size, and tightened line height -->
+                <h1 class="font-bebas text-6xl md:text-7xl lg:text-8xl text-white leading-none">
+                    You Don't Need More Hustle <br>
+                    <span class="text-brand-green">You Need a Machine</span>
                 </h1>
 
                 <p class="text-lg md:text-xl text-gray-400 leading-relaxed max-w-xl">
@@ -98,7 +102,8 @@
                 <!-- Abstract background pattern -->
                 <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(#ccff00 1px, transparent 1px); background-size: 20px 20px;"></div>
 
-                <div class="relative w-full max-w-md bg-brand-black border border-white/10 p-8 rounded-2xl neon-shadow z-10">
+                <!-- Changed max-w-md to max-w-lg for a wider container -->
+                <div class="relative w-full max-w-lg bg-brand-black border border-white/10 p-8 rounded-2xl neon-shadow z-10">
                 
                 <!-- Book Mockup Representation -->
                 <div class="flex justify-center mb-8">
@@ -110,7 +115,8 @@
                 </div>
 
                 <div class="text-center mb-6">
-                        <h3 class="text-xl font-bold text-white">Get The Handbook Free</h3>
+                        <!-- Switched to font-bebas and increased size -->
+                        <h3 class="text-3xl font-bebas text-white tracking-wide">Get The Handbook Free</h3>
                         <p class="text-sm text-gray-500 mt-2">Join 2,000+ Architects escaping the grind.</p>
                     </div>
 
