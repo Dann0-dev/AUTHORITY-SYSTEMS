@@ -3,195 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Authority Systems | Stop The Revenue Leak</title>
+    <title>The Revenue Architecture Handbook</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    colors: {
+                        'brand-black': '#111111',
+                        'brand-green': '#ccff00',
+                        'brand-gray': '#1a1a1a',
+                        'brand-text': '#e5e5e5',
+                    },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        display: ['Space Grotesk', 'sans-serif'],
                     },
-                    colors: {
-                        brand: {
-                            bg: '#111827', // Deep Anthracite
-                            surface: '#1F2937', // Lighter Anthracite/Steel
-                            primary: '#CCFF00', // Volt / Hyper Green
-                            primaryHover: '#B3E600',
-                            secondary: '#9CA3AF', // Cool Gray / Silver
-                            border: '#374151', // Gray 700
-                        }
-                    },
-                    backgroundImage: {
-                        'grid-pattern': "linear-gradient(to right, #374151 1px, transparent 1px), linear-gradient(to bottom, #374151 1px, transparent 1px)",
-                    },
-                    boxShadow: {
-                        'glow': '0 0 30px rgba(204, 255, 0, 0.25)', // Volt Glow
-                    }
                 }
             }
         }
     </script>
     <style>
         body {
-            background-color: #111827;
-            color: #ffffff;
+            background-color: #111111;
+            color: #e5e5e5;
         }
-        .bg-grid {
-            background-size: 50px 50px;
-            opacity: 0.3; /* Subtle grid */
+        .neon-shadow {
+            box-shadow: 0 0 20px rgba(204, 255, 0, 0.15);
         }
-        .text-volt-glow {
-            text-shadow: 0 0 25px rgba(204, 255, 0, 0.5);
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0px); opacity: 0.2; }
-            50% { transform: translateY(-20px); opacity: 0.5; }
-            100% { transform: translateY(0px); opacity: 0.2; }
-        }
-        .node-dot {
-            animation: float 6s ease-in-out infinite;
-            background-color: #CCFF00;
-            box-shadow: 0 0 15px #CCFF00;
+        .input-focus:focus {
+            outline: none;
+            border-color: #ccff00;
+            box-shadow: 0 0 0 2px rgba(204, 255, 0, 0.2);
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col items-center justify-center p-6 bg-brand-bg bg-grid grid-pattern relative overflow-x-hidden">
+<body class="min-h-screen flex flex-col font-sans">
 
-    <!-- Top Left Identity -->
-    <div class="absolute top-8 left-8 z-20">
-        <div class="font-display font-bold text-xl tracking-widest text-white border-l-4 border-brand-primary pl-3">
-            AUTHORITY<span class="text-brand-primary">SYSTEMS</span>
+    <!-- Navbar (Minimalist) -->
+    <nav class="w-full py-6 px-6 md:px-12 flex justify-between items-center absolute top-0 z-10">
+        <div class="font-bold text-xl tracking-tighter text-white">
+            REVENUE <span class="text-brand-green">ARCHITECT</span>
         </div>
-    </div>
+    </nav>
 
-    <!-- Decorative Background Elements (Anthracite/Volt) -->
-    <div class="absolute top-20 right-20 w-2 h-2 rounded-full node-dot"></div>
-    <div class="absolute bottom-40 left-10 w-2 h-2 rounded-full node-dot" style="animation-delay: 2s;"></div>
-    <!-- Large Volt Glow (Subtle) -->
-    <div class="absolute top-1/2 left-1/4 w-[600px] h-[600px] bg-brand-primary rounded-full blur-[200px] opacity-10 pointer-events-none -translate-y-1/2"></div>
-    <!-- Large Steel Glow -->
-    <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gray-600 rounded-full blur-[150px] opacity-10 pointer-events-none"></div>
-
-    <!-- Main Layout -->
-    <main class="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-16 items-center mt-16 lg:mt-0 relative z-10">
+    <!-- Main Hero Section -->
+    <main class="flex-grow flex flex-col lg:flex-row items-center justify-center w-full min-h-screen">
         
-        <!-- Left Column: Copy & Form -->
-        <div class="lg:col-span-7 space-y-8">
+        <!-- LEFT COLUMN: Copy & Persuasion -->
+        <div class="w-full lg:w-1/2 p-8 md:p-16 lg:p-24 flex flex-col justify-center space-y-8 mt-16 lg:mt-0">
             
-            <!-- Technical Badge -->
-            <div class="inline-flex items-center space-x-2 border border-brand-border bg-brand-surface/50 backdrop-blur-md px-3 py-1 text-xs font-mono text-gray-300 rounded-full shadow-lg">
-                <span class="w-2 h-2 rounded-full bg-brand-primary animate-pulse"></span>
-                <span>SYSTEM DIAGNOSTIC</span>
+            <div class="inline-block bg-brand-gray text-brand-green px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide w-max border border-brand-green/20">
+                FOR CONSULTANTS & COACHES
             </div>
 
-            <!-- Headline -->
-            <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold leading-none tracking-tight">
-                YOUR PROFILE IS<br>
-                <span class="text-brand-primary text-volt-glow">LEAKING REVENUE</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                You Don't Need More Hustle. <br>
+                <span class="text-brand-green">You Need a Machine.</span>
             </h1>
 
-            <!-- Subheadline -->
-            <div class="text-xl text-gray-400 max-w-2xl font-light leading-relaxed relative pl-6 before:absolute before:left-0 before:top-0 before:h-full before:w-[2px] before:bg-brand-primary before:shadow-glow space-y-4">
-                <p class="text-white font-medium">
-                    If you don't take advantage of your link in bio... You are making it harder for qualified leads to enter your world.
-                </p>
-                <p>
-                    Get the 4-phase funnel outline that captures leads, nurtures authority, and books calls while you do what you do best.
-                </p>
-            </div>
+            <p class="text-lg md:text-xl text-gray-400 leading-relaxed max-w-xl">
+                Stop relying on luck. Discover the "Revenue Architecture" system to replace manual DMs with predictable assets that fill your calendar while you sleep.
+            </p>
 
-            <!-- Form Container (No Box) -->
-            <div class="relative z-10 max-w-xl pt-4">
-                <h3 class="font-display text-2xl font-bold text-white uppercase mb-6 pl-1">Get The Blueprint</h3>
+            <!-- Benefit Bullets -->
+            <ul class="space-y-4 mt-4">
+                <li class="flex items-start">
+                    <i class="fa-solid fa-check text-brand-green mt-1.5 mr-4"></i>
+                    <span class="text-gray-300">Why your "Linktree" is leaking leads (and money).</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fa-solid fa-check text-brand-green mt-1.5 mr-4"></i>
+                    <span class="text-gray-300">The 4-step architecture that replaces manual outreach.</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fa-solid fa-check text-brand-green mt-1.5 mr-4"></i>
+                    <span class="text-gray-300">How to build a "Premium Asset" that proves expertise instantly.</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fa-solid fa-check text-brand-green mt-1.5 mr-4"></i>
+                    <span class="text-gray-300">The "Invisible Salesman" email sequence script.</span>
+                </li>
+            </ul>
+
+        </div>
+
+        <!-- RIGHT COLUMN: Visual & Form -->
+        <div class="w-full lg:w-1/2 bg-brand-black h-full min-h-[50vh] lg:min-h-screen flex items-center justify-center p-8 relative border-l border-white/5">
+            
+            <!-- Abstract background pattern -->
+            <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(#ccff00 1px, transparent 1px); background-size: 20px 20px;"></div>
+
+            <div class="relative w-full max-w-md bg-brand-black border border-white/10 p-8 rounded-2xl neon-shadow">
                 
-                <!-- Form -->
-                <form action="https://app.convertkit.com/forms/YOUR_FORM_ID/subscriptions" method="post" class="space-y-4" onsubmit="event.preventDefault(); alert('In production, this submits to ConvertKit.');">
-                    <div>
-                        <input type="email" name="email_address" class="w-full bg-brand-surface/50 border border-brand-border text-white px-4 py-4 font-mono text-sm focus:outline-none focus:border-brand-primary focus:bg-brand-surface transition-all placeholder-gray-500 rounded-md" placeholder="ENTER EMAIL ADDRESS" required>
+                <!-- Book Mockup Representation -->
+                <div class="flex justify-center mb-8">
+                    <!-- Increased size from w-32 h-44 to w-56 h-80 -->
+                    <div class="w-56 h-80 bg-gradient-to-br from-brand-gray to-black border border-brand-green/30 rounded flex items-center justify-center relative shadow-2xl transform hover:scale-105 transition duration-500">
+                        <div class="text-center p-4">
+                            <!-- Increased icon size -->
+                            <i class="fa-solid fa-layer-group text-5xl text-brand-green mb-4"></i>
+                            <!-- Increased font sizes -->
+                            <div class="text-xs text-gray-400 uppercase tracking-widest mb-1">The</div>
+                            <div class="font-bold text-white text-xl leading-tight">REVENUE<br>ARCHITECTURE<br>HANDBOOK</div>
+                        </div>
+                        <!-- Page effect -->
+                        <div class="absolute right-0 top-0 h-full w-3 bg-white/5 border-l border-white/10"></div>
                     </div>
-                    <button type="submit" class="w-full bg-brand-primary hover:bg-brand-primaryHover text-brand-bg font-bold py-4 text-sm tracking-widest uppercase transition-all shadow-glow rounded-md">
-                        SEND ME THE BLUEPRINT
+                </div>
+
+                <div class="text-center mb-6">
+                    <h3 class="text-xl font-bold text-white">Get The Handbook Free</h3>
+                    <p class="text-sm text-gray-500 mt-2">Join 2,000+ Architects escaping the grind.</p>
+                </div>
+
+                <!-- Form -->
+                <form class="space-y-4" onsubmit="event.preventDefault(); alert('In a real version, this would submit to your email marketing software (e.g. ConvertKit, ActiveCampaign).');">
+                    <div>
+                        <label for="email" class="sr-only">Email Address</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="Enter your best email address" 
+                            required
+                            class="w-full px-4 py-4 bg-[#0a0a0a] border border-gray-700 rounded-lg text-white placeholder-gray-500 input-focus transition-all"
+                        >
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-brand-green text-black font-bold text-lg py-4 rounded-lg hover:bg-[#b3e600] transition-colors transform active:scale-[0.98] shadow-[0_0_15px_rgba(204,255,0,0.3)]">
+                        Get Instant Access <i class="fa-solid fa-arrow-right ml-2"></i>
                     </button>
+                    
+                    <p class="text-xs text-center text-gray-600 mt-4">
+                        <i class="fa-solid fa-lock mr-1"></i> Your info is secure. Unsubscribe anytime.
+                    </p>
                 </form>
 
-                <!-- Trust Indicators -->
-                <div class="mt-6 text-center">
-                    <div class="flex justify-center gap-1 text-brand-primary mb-2 text-xs">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-xs text-gray-500 font-mono">HIGH-TICKET PROTOCOL // INSTANT ACCESS</p>
-                </div>
             </div>
         </div>
-
-        <!-- Right Column: Visual Only -->
-        <div class="lg:col-span-5 relative space-y-12 flex flex-col justify-center items-center h-full">
-            
-            <!-- Volt decorative glow behind -->
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-brand-primary blur-[100px] opacity-10 z-0"></div>
-
-            <!-- Book Cover Visual -->
-            <div class="flex justify-center w-full relative z-10">
-                <div class="w-80 shadow-[0_30px_60px_rgba(0,0,0,0.7)] transform hover:-translate-y-2 transition-transform duration-300 rounded-sm overflow-hidden border border-brand-border">
-                    <!-- SVG Code Embedded Directly -->
-                    <svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
-                        <defs>
-                            <linearGradient id="coverGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#374151;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#111827;stop-opacity:1" />
-                            </linearGradient>
-                            <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
-                                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#CCFF00" stroke-width="0.5" opacity="0.15"/>
-                            </pattern>
-                        </defs>
-                        <rect width="400" height="600" fill="url(#coverGradient)"/>
-                        <rect width="400" height="600" fill="url(#gridPattern)" />
-                        
-                        <!-- Volt Spine -->
-                        <rect x="0" y="0" width="15" height="600" fill="#CCFF00" />
-                        
-                        <!-- Box Identity -->
-                        <rect x="230" y="50" width="140" height="30" fill="none" stroke="#CCFF00" stroke-width="2"/>
-                        <text x="300" y="70" font-family="Arial, sans-serif" font-size="10" fill="#CCFF00" text-anchor="middle" font-weight="bold" letter-spacing="2">ARCHITECT SERIES</text>
-                        
-                        <text x="210" y="200" font-family="Arial, sans-serif" font-size="20" fill="#9CA3AF" text-anchor="middle" font-weight="bold" letter-spacing="4">THE AUTHORITY</text>
-                        <text x="210" y="250" font-family="Arial, sans-serif" font-size="52" fill="#ffffff" text-anchor="middle" font-weight="900" letter-spacing="0">BLUEPRINT</text>
-                        
-                        <!-- Volt Divider -->
-                        <rect x="160" y="300" width="100" height="6" fill="#CCFF00"/>
-                        
-                        <!-- Graphics -->
-                        <g transform="translate(150, 380)">
-                            <rect x="20" y="20" width="60" height="60" fill="none" stroke="#9CA3AF" stroke-width="2"/>
-                            <line x1="20" y1="40" x2="80" y2="40" stroke="#9CA3AF" stroke-width="1"/>
-                            <line x1="50" y1="20" x2="50" y2="80" stroke="#9CA3AF" stroke-width="1"/>
-                            <circle cx="50" cy="50" r="10" fill="#CCFF00"/>
-                        </g>
-                        <text x="210" y="520" font-family="Arial, sans-serif" font-size="12" fill="#9CA3AF" text-anchor="middle" font-weight="400" letter-spacing="1">CLIENT ACQUISITION</text>
-                        <text x="210" y="560" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle" font-weight="bold" letter-spacing="2">AUTHORITY <tspan fill="#CCFF00">SYSTEMS.</tspan></text>
-                    </svg>
-                </div>
-            </div>
-        </div>
-
     </main>
-
-    <!-- Footer -->
-    <footer class="absolute bottom-6 w-full text-center">
-        <p class="text-xs text-gray-500 font-mono">EST. 2024 // AUTHORITY SYSTEMS</p>
-    </footer>
 
 </body>
 </html>
